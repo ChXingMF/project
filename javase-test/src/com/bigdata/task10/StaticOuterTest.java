@@ -6,6 +6,8 @@ public class StaticOuterTest {
         // 1.声明StaticInner类型的引用指向该类型的对象
         StaticOuter.StaticInner si = new StaticOuter.StaticInner();
         si.show();
+        System.out.println("------------------------------------------");
+        si.show2(5);
     }
 
 }
