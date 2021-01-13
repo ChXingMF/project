@@ -1,5 +1,7 @@
 package com.bigdata.task11;
 
+import java.util.Objects;
+
 public class Student {
     private int id;
     private String name;
@@ -33,13 +35,43 @@ public class Student {
         this.name = name;
     }
 
-    /**
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return id == student.id &&
+                Objects.equals(name, student.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
+    }
+/*    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Student student = (Student) o;
+
+        if (id != student.id) return false;
+        return name != null ? name.equals(student.name) : student.name == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
+    }*/
+/**
      * 为了比较两个对象的内容，也就是学号信息需要重写该方法
      */
 
     // Student this = s1;
     // Object obj = s2;
-    @Override
+   /* @Override
     public boolean equals(Object obj) {
         // 当调用对象和参数对象指向同一个对象时，则内容一定相同
         if (this == obj) return true;
@@ -57,12 +89,12 @@ public class Student {
         }
         // 否则类型不一致没有可比性，则内容一定不相同
         return false;
-    }
+    }*/
 
     /**
      * 为了使得该方法的结果与equals方法的结果保持一致，从而满足Java官方的常规协定，需要重写该方法
      */
-    @Override
+   /* @Override
     public int hashCode() {
         //return getId(); // 不再代表内存地址的编号了
         final int type = 12;
@@ -70,11 +102,11 @@ public class Student {
         return type*31 + getName().hashCode();
     }
 
-    /**
+    *//**
      * 为了返回更有意义的字符串数据，则需要重写该方法
-     */
+     *//*
     @Override
     public String toString() {
         return "Student[id = " + getId() + ", name = " + getName() + "]";
-    }
+    }*/
 }
