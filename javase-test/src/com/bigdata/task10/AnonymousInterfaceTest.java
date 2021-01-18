@@ -19,8 +19,8 @@ public class AnonymousInterfaceTest {
                 System.out.println("匿名内部类就是这么玩的，虽然你很抽象！");
             }
         };
-        // 从Java8开始提出新特性lamda表达式可以简化上述代码，格式为：(参数列表) -> {方法体}
-        AnonymousInterface ait2 = () -> System.out.println("lamda表达式原来是如此简单！");
+        // 从Java8开始提出新特性lambda表达式可以简化上述代码，格式为：(参数列表) -> {方法体}
+        AnonymousInterface ait2 = () -> System.out.println("lambda表达式原来是如此简单！");
         AnonymousInterfaceTest.test(ait);
     }
 }
