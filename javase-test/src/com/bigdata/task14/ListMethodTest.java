@@ -68,5 +68,24 @@ public class ListMethodTest {
         System.out.println("修改后集合中的元素有：" + lt1); // [one, two, three, four]
 
         System.out.println("------------------------------------------");
+        // 7.使用remove方法将集合中的所有元素删除
+        //for (int i = 0; i < lt1.size(); /*i++*/) {
+       /* for (int i = lt1.size()-1; i >= 0; i--) {
+            //System.out.println("被删除的元素是：" + lt1.remove(i)); // one  two  three  four 删除元素后，后面的元素补位
+            //System.out.println("被删除的元素是：" + lt1.remove(0));
+            System.out.println("被删除的元素是：" + lt1.remove(i));
+        }
+        System.out.println("最终集合中的元素有：" + lt1); // [啥也没有]*/
+
+        System.out.println("------------------------------------------");
+        // 8.获取当前集合中的子集合，也就是将集合中的一部分内容获取出来，子集合和当前集合共用同一块内存空间
+        // 表示获取当前集合lt1中下标从1开始到3之间的元素，包含1但不包含3
+        List lt2 = lt1.subList(1, 3);
+        System.out.println("lt2 = " + lt2); // [two, three]
+        // 删除lt2中元素的数值
+        str2 = (String) lt2.remove(0);
+        System.out.println("被删除的元素是：" + str2); // two
+        System.out.println("删除后lt2 = " + lt2); // [three]
+        System.out.println("删除后lt1 = " + lt1); // [one, three, four]
     }
 }
