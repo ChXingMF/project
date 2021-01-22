@@ -43,6 +43,13 @@ public class Person<T> {
         this.gender = gender;
     }
 
+    // 自定义方法实现将参数指定数组中的所有元素打印出来
+    public static <T1> void printArray(T1[] arr) {
+        for (T1 tt: arr) {
+            System.out.println("tt = " + tt);
+        }
+    }
+
     @Override
     public String toString() {
         return "Person{" +
