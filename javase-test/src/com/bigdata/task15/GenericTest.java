@@ -5,7 +5,7 @@ import java.util.List;
 
 public class GenericTest {
     public static void main(String[] args) {
-// 1.声明两个List类型的集合进行测试
+        // 1.声明两个List类型的集合进行测试
         List<Animal> lt1 = new LinkedList<>();
         List<Dog> lt2 = new LinkedList<>();
         // 试图将lt2的数值赋值给lt1，也就是发生List<Dog>类型向List<Animal>类型的转换

@@ -68,7 +68,7 @@ public class MapTest {
             System.out.println("ts = " + ts);
         }
 
-        System.out.println("-------------------------------------------------------------");
+        System.out.println("-----------------------z--------------------------------------");
         // 7.获取Map集合中所有的键值对并组成Set视图
         Set<Map.Entry<String, String>> entries = m1.entrySet();
         for (Map.Entry<String, String> me : entries) {
