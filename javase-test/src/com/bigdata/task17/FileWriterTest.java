@@ -32,6 +32,15 @@ public class FileWriterTest {
             System.out.println("写入数据成功！");
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+            // 3.关闭流对象并释放有关的资源
+            if (null != fw) {
+                try {
+                    fw.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
     }
